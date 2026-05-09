@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Talib Yas - IT Portfolio</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+        header { 
+            background-color: #2c3e50; 
+            color: white; 
+            padding: 2rem 0; 
+            text-align: center; 
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            background-color: #34495e; 
+            flex-wrap: wrap;
+        }
+        nav button { 
+            background-color: transparent; 
+            border: none; 
+            color: white; 
+            padding: 14px 24px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold;
+            transition: background 0.3s; 
+        }
+        nav button:hover, nav button.active { 
+            background-color: #1abc9c; 
+        }
+        main { 
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 30px auto; 
+            background: white; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            border-radius: 8px; 
+            flex: 1;
+            width: 90%;
+        }
+        .page { 
+            display: none; 
+        }
+        .page.active { 
+            display: block; 
+            animation: fadeIn 0.4s ease-in-out; 
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        h2 { 
+            color: #2c3e50; 
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        a { 
+            color: #1abc9c; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        .info-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #1abc9c;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ali Talib Yas</h1>
+    <p>IT Department - University of Karbala</p>
+</header>
+
+<nav>
+    <button class="tablink active" onclick="openPage('Home', this)">Home</button>
+    <button class="tablink" onclick="openPage('About', this)">About Me</button>
+    <button class="tablink" onclick="openPage('Skills', this)">Skills</button>
+    <button class="tablink" onclick="openPage('Projects', this)">Projects</button>
+    <button class="tablink" onclick="openPage('Contact', this)">Contact</button>
+</nav>
+
+<main>
+    <div id="Home" class="page active">
+        <h2>Home</h2>
+        <p>Welcome to my website!</p>
+        <p>I created this website for my school project to showcase my journey as an IT student.</p>
+    </div>
+
+    <div id="About" class="page">
+        <h2>About Me</h2>
+        <p>I am <strong>Ali Talib Yas</strong>.</p>
+        <p>I am a first-year IT student at the University of Karbala, Department of Computer Science.</p>
+        <p>I am passionate about technology, programming, and learning how computer systems work behind the scenes.</p>
+    </div>
+
+    <div id="Skills" class="page">
+        <h2>My Skills</h2>
+        <p>As a first-year IT student, I am currently learning and developing the following skills:</p>
+        <div class="info-card">
+            <ul>
+                <li><strong>Web Development:</strong> HTML, CSS</li>
+                <li><strong>Programming Fundamentals:</strong> Logic and basic algorithms</li>
+                <li><strong>Computer Science Concepts:</strong> Hardware, software, and networking basics</li>
+                <li><strong>Problem Solving:</strong> Analytical thinking for IT solutions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="Projects" class="page">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I am currently working on:</p>
+        <div class="info-card">
+            <h3>School Portfolio Website</h3>
+            <p>This very website! I built it using HTML, CSS, and basic JavaScript to organize my information into an interactive, multi-tab layout.</p>
+        </div>
+    </div>
+
+    <div id="Contact" class="page">
+        <h2>Contact</h2>
+        <p>If you'd like to reach out, you can find my contact details below:</p>
+        <div class="info-card">
+            <p>📧 <strong>Email:</strong> <a href="mailto:csit26.ali.talib.yas@s.uokerbala.edu.iq">csit26.ali.talib.yas@s.uokerbala.edu.iq</a></p>
+            <p>✈️ <strong>Telegram:</strong> <a href="https://t.me/I_AM108" target="_blank">@I_AM108</a></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Ali Talib Yas. Built for a school project.</p>
+</footer>
+
+<script>
+    function openPage(pageName, elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("page");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+
+        document.getElementById(pageName).style.display = "block";
+        
+        setTimeout(() => {
+            document.getElementById(pageName).classList.add("active");
+        }, 10);
+        
+        elmnt.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
